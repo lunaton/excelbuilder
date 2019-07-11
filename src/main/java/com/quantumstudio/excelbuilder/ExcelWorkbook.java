@@ -8,6 +8,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class ExcelWorkbook {
@@ -79,6 +81,9 @@ public class ExcelWorkbook {
 		else if(excelValues instanceof Calendar){
 			cell.setCellValue(convertToCalendar(excelValues));
 		}
+		else if(excelValues instanceof Date){
+			cell.setCellValue(convertToDate(excelValues));
+		}
 	}
 
 	private String convertToString(Object value) {
@@ -93,8 +98,19 @@ public class ExcelWorkbook {
 		return (Integer) value;
 	}
 
-	private Calendar convertToCalendar(Object value) {
-		return (Calendar) value;
+	private String convertToCalendar(Object value) {
+		DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		return format.format((Date) value);
+	}
+
+	private String convertToDate(Object value) {
+		DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		return format.format((Date)value);
+	}
+
+	public static <T, Clazz> Object genericConverter(T anyType){
+		Class<? extends  Object> Clazz = anyType.getClass();
+		return (Clazz) anyType;
 	}
 
 	public ExcelWorkbook withHeaderFont(boolean isBold, ExcelFontSize fontHeight, ExcelFontColor excelFontColor, ExcelFontType fontName){

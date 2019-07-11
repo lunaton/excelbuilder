@@ -5,7 +5,9 @@ import com.quantumstudio.excelbuilder.ExcelConstants.ExcelFontSize;
 import com.quantumstudio.excelbuilder.ExcelConstants.ExcelFontType;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class Main {
 
@@ -16,6 +18,7 @@ public class Main {
 				{1, 2},
 				{"hola", 4.1},
 				{30000, new Date()},
+				{Calendar.getInstance(Locale.getDefault()), new Date()},
 				{3, 4},
 		};
 		new ExcelWorkbook().addSheet("nuevodocumento", header2, content).withHeaderFont(true, ExcelFontSize.SIZE_12
