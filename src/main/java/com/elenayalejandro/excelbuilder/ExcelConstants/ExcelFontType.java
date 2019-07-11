@@ -1,4 +1,4 @@
-package com.quantumstudio.excelbuilder.ExcelConstants;
+package com.elenayalejandro.excelbuilder.ExcelConstants;
 
 public enum ExcelFontType {
 	ARIAL("Arial"),
