@@ -1,6 +1,5 @@
 package com.elenayalejandro.excelbuilder;
 
-
 import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontColor;
 import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontSize;
 import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontType;
@@ -8,10 +7,14 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class ExcelWorkbook {
 
@@ -69,10 +72,8 @@ public class ExcelWorkbook {
 		return outputStream;
 	}
 
-	private void converterExcelValues(Object excelValues1, Cell cell1) {
-		Cell cell = cell1;
+	private void converterExcelValues(Object excelValues, Cell cell) {
 
-		Object excelValues = excelValues1;
 		if(excelValues instanceof String){
 			cell.setCellValue(convertToString(excelValues));
 		}
