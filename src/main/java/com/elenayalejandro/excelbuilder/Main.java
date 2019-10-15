@@ -1,8 +1,8 @@
 package com.elenayalejandro.excelbuilder;
 
-import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontColor;
-import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontSize;
-import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontType;
+import com.elenayalejandro.excelbuilder.excelconstants.ExcelFontColor;
+import com.elenayalejandro.excelbuilder.excelconstants.ExcelFontSize;
+import com.elenayalejandro.excelbuilder.excelconstants.ExcelFontType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 
 import java.io.FileOutputStream;
@@ -14,9 +14,9 @@ import java.util.Locale;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Object header[] = {"Columna 1", "columna 2"};
-		String header2[] = {"Columna 1ggg", "columnagg 2"};
-		Object content[][] = {
+		Object[] header = {"Columna 1", "columna 2"};
+		String[] header2 = {"Columna 1ggg", "columnagg 2"};
+		Object[][] content = {
 				{1, 2},
 				{"hola", 4.1},
 				{30000, new Date()},

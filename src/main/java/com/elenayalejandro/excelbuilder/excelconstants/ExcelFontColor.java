@@ -1,4 +1,4 @@
-package com.elenayalejandro.excelbuilder.ExcelConstants;
+package com.elenayalejandro.excelbuilder.excelconstants;
 
 public enum ExcelFontColor {
 
