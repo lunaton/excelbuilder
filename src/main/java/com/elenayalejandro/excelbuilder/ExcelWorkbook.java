@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -27,12 +28,16 @@ public class ExcelWorkbook {
 	private String fileName;
 
 	public ExcelWorkbook() {
+		this(LocalDateTime.now().toString());
+	}
+
+	public ExcelWorkbook(String name) {
 		this.excelBook = new ArrayList<>();
 		this.workbook = new XSSFWorkbook();
 		this.isFiltered = false;
 		withHeaderFont(true, ExcelFontSize.SIZE_12, ExcelFontColor.BLACK, ExcelFontType.CALIBRI);
 		withContentFont(false, ExcelFontSize.SIZE_11, ExcelFontColor.BLACK, ExcelFontType.ARIAL);
-		this.fileName = "prueba" + ".xlsx";
+		this.fileName = name;
 	}
 
 	public ExcelWorkbook addSheet(String name, String[] header, Object[][] contentTable){
