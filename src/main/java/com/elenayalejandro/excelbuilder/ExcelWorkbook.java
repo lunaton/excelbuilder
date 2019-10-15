@@ -1,8 +1,8 @@
 package com.elenayalejandro.excelbuilder;
 
-import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontColor;
-import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontSize;
-import com.elenayalejandro.excelbuilder.ExcelConstants.ExcelFontType;
+import com.elenayalejandro.excelbuilder.excelconstants.ExcelFontColor;
+import com.elenayalejandro.excelbuilder.excelconstants.ExcelFontSize;
+import com.elenayalejandro.excelbuilder.excelconstants.ExcelFontType;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
