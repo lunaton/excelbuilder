@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.DateFormat;
@@ -38,6 +39,12 @@ public class ExcelWorkbook {
 		ExcelSheet excelSheet = new ExcelSheet(name, this.currentHeaderStyle, this.currentContentFont,  header, contentTable, isFiltered);
 		this.excelBook.add(excelSheet);
 		return this;
+	}
+
+	public byte[] buildExcel() throws IOException {
+		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+		buildExcel(byteArrayOutputStream);
+		return byteArrayOutputStream.toByteArray();
 	}
 
 	public OutputStream buildExcel(OutputStream outputStream) throws IOException {
